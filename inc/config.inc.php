@@ -1,0 +1,15 @@
+<?php 
+date_default_timezone_set('Asia/Shanghai');
+session_start();
+header('Content-type:text/html;charset=utf-8');
+if(version_compare(PHP_VERSION,'5.4.0')<0){
+	exit('您的PHP版本为'.PHP_VERSION.',我们的程序要求是PHP版本不低于5.4.0!');
+}
+define('DB_HOST','localhost');
+define('DB_USER','root');
+define('DB_PASSWORD','123');
+define('DB_DATABASE','cfcbbs');
+define('DB_PORT',3306);
+define('SA_PATH',dirname(dirname(__FILE__)));
+define('SUB_URL',str_replace($_SERVER['DOCUMENT_ROOT'],'',str_replace('\\','/',SA_PATH)).'/');
+?>
